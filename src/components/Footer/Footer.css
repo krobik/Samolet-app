@@ -1,0 +1,14 @@
+.footer {
+    flex-shrink: 0;
+}
+
+.fooner__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__desc{
+    margin-bottom: 5px;
+    font-weight: 300;
+}
