@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 import { Layout, Row, Col } from 'antd'
 
+
+import ErrorBoundary from '../ErrorBoundary'
 import Header from '../Header'
 import Footer from '../Footer'
 import NotFound from '../NotFound'
@@ -20,9 +22,8 @@ const App = () => {
 	}, [dispatch])
 
 	return (
-		<>
+		<ErrorBoundary>
 			<Header />
-
 			<div className="content">
 				<Suspense fallback={<Loader />}>
 					<Layout style={{ height: "100%" }}>
@@ -43,9 +44,8 @@ const App = () => {
 					</Layout>
 				</Suspense>
 			</div>
-
 			<Footer />
-		</>
+		</ErrorBoundary>
 	)
 }
 
